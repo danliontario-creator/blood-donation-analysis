@@ -1,0 +1,98 @@
+============================================
+📊 BLOOD DONATION ANALYSIS — TERMINAL OUTPUT
+============================================
+
+### 🧱 Data Overview
+   recency  frequency  monetary  months  donate
+0        2         50     12500      98       1
+1        0         13      3250      28       1
+2        1         16      4000      35       1
+3        2         20      5000      45       1
+4        1         24      6000      77       0
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 748 entries, 0 to 747
+Data columns (total 5 columns):
+ #   Column     Non-Null Count  Dtype
+---  ------     --------------  -----
+ 0   recency    748 non-null    int64
+ 1   frequency  748 non-null    int64
+ 2   monetary   748 non-null    int64
+ 3   months     748 non-null    int64
+ 4   donate     748 non-null    int64
+dtypes: int64(5)
+memory usage: 29.3 KB
+
+---
+
+### ⚖️ Donation Class Distribution
+donate
+0    0.762032
+1    0.237968
+Name: proportion, dtype: float64
+
+---
+
+### 📈 Descriptive Statistics
+          recency   frequency      monetary      months      donate
+count  748.000000  748.000000    748.000000  748.000000  748.000000
+mean     9.506684    5.514706   1378.676471   34.282086    0.237968
+std      8.095396    5.839307   1459.826781   24.376714    0.426124
+min      0.000000    1.000000    250.000000    2.000000    0.000000
+25%      2.750000    2.000000    500.000000   16.000000    0.000000
+50%      7.000000    4.000000   1000.000000   28.000000    0.000000
+75%     14.000000    7.000000   1750.000000   50.000000    0.000000
+max     74.000000   50.000000  12500.000000   98.000000    1.000000
+
+---
+
+### 🔍 Group Means by Donation Status
+          recency  frequency     monetary     months
+donate                                              
+0       10.771930   4.801754  1200.438596  34.770175
+1        5.455056   7.797753  1949.438202  32.719101
+
+---
+
+### 🔗 Correlation Matrix
+            recency  frequency  monetary    months    donate
+recency    1.000000  -0.182745 -0.182745  0.160618 -0.279869
+frequency -0.182745   1.000000  1.000000  0.634940  0.218633
+monetary  -0.182745   1.000000  1.000000  0.634940  0.218633
+months     0.160618   0.634940  0.634940  1.000000 -0.035854
+donate    -0.279869   0.218633  0.218633 -0.035854  1.000000
+
+---
+
+### 🤖 Model Performance
+
+**Confusion Matrix**
+[[161   4]
+ [ 55   5]]
+
+**Classification Report**
+              precision    recall  f1-score   support
+
+           0       0.75      0.98      0.85       165
+           1       0.56      0.08      0.14        60
+
+    accuracy                           0.74       225
+   macro avg       0.65      0.53      0.50       225
+weighted avg       0.69      0.74      0.66       225
+
+**ROC AUC Score:** 0.7579
+
+---
+
+### 🧩 Interpretation Summary
+
+✅ Logistic Regression achieved **74% accuracy** and **0.76 ROC AUC**.  
+🩸 Recent donors (low recency) are more likely to donate again.  
+📦 Frequency and total volume (monetary) are strongly correlated.  
+📉 Class imbalance (76% non-donors) explains the lower recall for donor prediction.  
+
+---
+
+============================================
+✅ END OF TERMINAL OUTPUT — CLEAN VERSION
+============================================
